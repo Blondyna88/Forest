@@ -1,0 +1,369 @@
+@use "colors" as c;
+@use "components";
+@use "mixins";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Raleway", sans-serif;
+	font-size: 1.8rem;
+	background-color: c.$main-color;
+}
+
+// NAV
+//----------------------------------------------------------------------------
+
+.header {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+
+	.nav {
+		padding: 0 2em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+      position: fixed;
+      width: 100%;
+		top: 0;
+		min-height: 4em;
+		background-color: c.$main-color;
+		border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+
+		.logo {
+			min-width: 5em;
+			font-size: 3rem;
+			i {
+				color: c.$logo;
+			}
+		}
+
+		&__list {
+			display: flex;
+			gap: 1em;
+
+			&-item {
+				list-style: none;
+				font-size: 1.6rem;
+				padding: 1.4em 1em;
+				transition: 0.4s;
+
+				&:hover {
+					background-color: c.$strong-dark;
+					a {
+						color: #fff;
+					}
+				}
+            a{
+               padding: 1.2em 0;
+            }
+			}
+		}
+	}
+}
+
+.hamburger {
+	display: none;
+	position: fixed;
+	right: 10px;
+   border: none;
+   background: none;
+	padding: 1em;
+	cursor: pointer;
+	z-index: 1000;
+
+   
+	.bars {
+      position: relative;
+		width: 35px;
+		height: 30px;
+      
+		.bar,
+		.bar::after,
+		.bar::before {
+         position: absolute;
+			right: 0;
+			height: 2.5px;
+			background-color: c.$strong-dark;
+			content: "";
+			transition: 0.3s;
+		}
+      
+		.bar {
+         width: 100%;
+         
+			&::after {
+            width: 60%;
+				top: 13px;
+			}
+         
+			&::before {
+            width: 30%;
+				top: 25px;
+				transition-delay: 0.1s;
+			}
+		}
+	}
+   
+   &:focus {
+      outline: none;
+   }
+   
+   &:hover, &:focus {
+      .bar::before,
+      .bar::after {
+         width: 100%;
+      }
+   }
+}
+
+.a-style {
+	text-decoration: none;
+	color: c.$strong-dark;
+}
+
+
+//HOME
+//-----------------------------------------------------------------------
+
+.home {
+	@include mixins.heroImages("/dist/img/home_desk.jpg");
+	background-position: 50% 75%;
+	background-attachment: scroll;
+	padding: 12em 2em 10em;
+
+	.text {
+		color: c.$light-text;
+
+		.name {
+			font-size: 2rem;
+			font-weight: 300;
+		}
+		.heading {
+			font-weight: 600;
+			font-size: 3rem;
+		}
+	}
+}
+
+// ABOUT US
+
+.aboutus {
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		&-img {
+			img {
+				border-radius: 6px;
+			}
+		}
+
+		&-text {
+			padding: 2em 0;
+			h3 {
+				font-size: 2.4rem;
+				font-weight: 700;
+				margin-bottom: 0.5em;
+			}
+			p {
+				font-size: 2rem;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.hero__img {
+	@include mixins.heroImages("/dist/img/girl_small.jpg");
+	padding: 6em 0;
+
+	&-text {
+		padding: 1.5em 0;
+		font-size: 2.6rem;
+		color: c.$light-text;
+		text-align: center;
+		border: 2px solid c.$light-text;
+	}
+}
+
+//OFFER
+//--------------------------------------------------------------------
+
+.offer {
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+      margin-bottom: 2em;
+	}
+
+	&__option {
+		margin: 2.5em 0;
+		padding: 2em;
+		min-width: 271px;
+		text-align: center;
+		background-color: c.$main-color;
+		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+		border-radius: 6px;
+		transition: 0.3s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+
+		&-heading {
+			font-size: 2.8rem;
+		}
+		&-price {
+			margin: 0.5em 0;
+			font-size: 3rem;
+		}
+		&-list {
+			list-style: none;
+
+			li {
+				font-size: 1.8rem;
+				font-weight: 450;
+				padding: 0.3em;
+
+				.fa-check {
+					color: c.$green;
+				}
+			}
+			.minus {
+				color: c.$gray-text;
+			}
+		}
+
+		&-btn {
+			margin-top: 1.5em;
+			@include mixins.btnStyle;
+		}
+	}
+
+	&__link {
+      padding-bottom: .5em;
+		display: flex;
+		flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+
+		img {
+			border-radius: 6px;
+			margin: 2em 0;
+         height: 14em;
+		}
+		a {
+         button {
+            @include mixins.btnStyle;
+            font-size: 2rem;
+			}
+		}
+	}
+}
+
+//FOOTER
+//-----------------------------------------------------------
+
+.footer {
+	background-color: c.$footer;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		padding: 2em 1em;
+
+		&-logo {
+			i {
+				color: c.$logo;
+				margin: 0 0 1em 0.5em;
+			}
+		}
+
+		&-text {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__option {
+		&-list {
+			padding: 0.5em 0;
+			list-style: none;
+			li {
+				padding-bottom: 0.5em;
+			}
+		}
+	}
+
+	.small {
+		font-size: 1.8rem;
+		text-align: center;
+		padding: 1.5em;
+	}
+}
+
+//KEYFRAMES
+//--------------------------------------------------------
+
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+//---------------------------------------------------------
+//    MEDIA
+//---------------------------------------------------------
+
+@media (max-width: 768px) {
+	.hamburger {
+		display: block;
+	}
+
+	.nav__list {
+		position: fixed;
+		flex-direction: column;
+		width: 100%;
+		top: 4em;
+		background-color: c.$main-color;
+		transform: translateX(100%);
+		text-align: center;
+		transition: 0.4s;
+		padding-top: 1em;
+
+		&-item {
+			top: 0;
+			a {
+				padding: 1em 5em;
+			}
+		}
+	}
+
+	.open {
+		transform: translateX(0);
+		left: 0;
+	}
+
+	.nav-items-animation {
+		animation: navItemsAnimation 0.5s both;
+	}
+}

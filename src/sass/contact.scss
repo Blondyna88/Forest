@@ -1,0 +1,89 @@
+@use "colors" as c;
+@use "components";
+@use "mixins";
+
+.main {
+	margin-top: 1.5em;
+	padding-top: 4em;
+
+	.map {
+		padding: 0 2em;
+
+		&__container {
+			position: relative;
+			padding-bottom: 60%;
+			max-width: 800px;
+			min-width: 200px;
+			margin: 2em 0;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+
+			iframe {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+			}
+		}
+	}
+
+	.contact {
+		padding: 2em ;
+
+		.form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 1.5em;
+
+			p {
+				margin: 1em 0 .5em;
+            font-size: 1.6rem;
+            font-weight: 500;
+			}
+
+         .field{
+            width: 100%;
+            padding: 0 2em;
+         }
+
+			.item {
+				font-size: 1.6rem;
+				padding: 0.7em;
+				width: 100%;
+            outline: none;
+            border: 2px solid rgb(94, 94, 94);
+            border-radius: 6px;
+				color: black !important;
+			}
+
+			#message {
+				font-family: "Raleway", sans-serif;
+				min-height: 8em;
+            resize: none;
+			}
+
+			&-btn {
+				@include mixins.btnStyle;
+				margin-top: 1em;
+				align-self: center;
+			}
+
+			.error-msg{
+            display:none;
+				color: red;
+            font-size: 1.4rem;
+            margin: .3em 0;
+
+			}
+         
+         .error{
+            display: block;  
+         }
+
+         .error-field{
+            border: 2px solid rgb(255, 0, 0, 0.6);   
+         }
+		}
+	}
+}

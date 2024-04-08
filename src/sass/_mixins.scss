@@ -1,0 +1,24 @@
+@use "colors" as c;
+
+@mixin heroImages($bgImg) {
+	background-image: c.$black-shadow, url($bgImg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+@mixin btnStyle{
+      padding: 0.5em 3em;
+      border-radius: 6px;
+      border: none;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+      font-size: 1.8rem;
+      color: c.$gray-text;
+      transition: 0.3s;
+      cursor: pointer;
+      
+      &:hover {
+         background-color: c.$green;
+         color: c.$dark-text;
+      }
+}

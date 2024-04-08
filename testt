@@ -1,0 +1,209 @@
+/* @use "colors" as c;
+@use "components";
+@use "mixins";
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: "Inter", sans-serif;
+	font-size: 1.6rem;
+	background-color: c.$main-color;
+}
+
+// NAV
+//-------------------------------------------------------------------------------
+
+.header {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+
+	.nav {
+		padding: 0 2em;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		top: 0;
+		min-height: 4em;
+		background-color: c.$main-color;
+		border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+
+		.logo {
+			min-width: 5em;
+			font-size: 3rem;
+			i {
+				color: c.$logo;
+			}
+		}
+
+		&__list {
+			display: flex;
+			gap: 1em;
+
+			&-item {
+				list-style: none;
+				font-size: 1.6rem;
+				padding: 1.4em 1em;
+				transition: 0.4s;
+
+				&:hover {
+					background-color: c.$strong-dark;
+					a {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+.hamburger {
+	display: none;
+	position: fixed;
+	top: 2px;
+	right: 10px;
+	background: none;
+	padding: 1em;
+	cursor: pointer;
+	z-index: 1000;
+
+	&:focus {
+		outline: none;
+		border: 1px solid rgba(162, 19, 19, 0.5);
+		border-radius: 6px;
+	}
+
+	&:hover {
+		.bar::before,
+		.bar::after {
+			width: 100%;
+		}
+	}
+	.bars {
+		position: relative;
+		width: 35px;
+		height: 30px;
+
+		.bar,
+		.bar::after,
+		.bar::before {
+			position: absolute;
+			right: 0;
+			height: 2.5px;
+			background-color: c.$strong-dark;
+			content: "";
+			transition: 0.3s;
+		}
+
+		.bar {
+			width: 100%;
+
+			&::after {
+				width: 60%;
+				top: 13px;
+			}
+
+			&::before {
+				width: 30%;
+				top: 25px;
+				transition-delay: 0.1s;
+			}
+		}
+	}
+}
+
+.a-style {
+	text-decoration: none;
+	color: c.$strong-dark;
+}
+
+//HOME
+//-----------------------------------------------------------------------
+
+.home {
+	@include mixins.heroImages("/dist/img/home_desk.jpg");
+	background-position: 50% 75%;
+	background-attachment: scroll;
+	padding: 12em 2em 10em;
+
+	.text {
+		color: c.$light-text;
+
+		.name {
+			font-size: 1.8rem;
+			font-weight: 200;
+		}
+		.heading {
+			font-weight: 600;
+			font-size: 2.8rem;
+		}
+	}
+}
+
+// ABOUT US
+
+.aboutus {
+	&__box {
+		&-img {
+			overflow: hidden;
+		}
+	}
+}
+
+@keyframes navItemsAnimation {
+	from {
+		transform: translateX(100%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+//---------------------------------------------------------
+//    MEDIA
+//---------------------------------------------------------
+
+@media (max-width: 768px) {
+	.hamburger {
+		display: block;
+	}
+
+	.nav__list {
+		position: fixed;
+		flex-direction: column;
+		width: 100%;
+		top: 4em;
+		background-color: c.$main-color;
+		transform: translateX(100%);
+		text-align: center;
+		transition: 0.4s;
+		padding-top: 1em;
+
+		&-item {
+			top: 0;
+			a {
+				padding: 1em 5em;
+			}
+		}
+	}
+
+	.open {
+		transform: translateX(0);
+		left: 0;
+	}
+
+	.nav-items-animation {
+		animation: navItemsAnimation 0.5s both;
+	}
+} */
