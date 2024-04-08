@@ -119,7 +119,7 @@ body {
    &:focus {
       outline: none;
    }
-   
+
    &:hover, &:focus {
       .bar::before,
       .bar::after {
@@ -366,4 +366,10 @@ body {
 	.nav-items-animation {
 		animation: navItemsAnimation 0.5s both;
 	}
+}
+
+@media(max-width: 965px){
+   body{
+      background-color: green;
+   }
 }
