@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Forest</title>
    <link rel="stylesheet" href="/dist/css/offer.min.css">
-    <!-- @include 'links.kit' -->
+   <!-- @include 'links.kit' -->
 </head>
+
 <body>
-   
-<!-- @include 'header.kit' -->
 
-<main  class="main">
-   <section class="section section-padding discounts">
-      <header class="offer__header">
-         <h2 class="offer__header-title subtitle">W grupie najlepiej!</h2>
-         <p class="offer__header-text">Wybierz idealną ofertę i zabierz ekipę na niezapomnianą przygodę!</p>
-      </header>
+   <!-- @include 'header.kit' -->
+
+   <main class="main">
+
+      <section class="discounts section-padding">
+         <div class="wrapper">
+
+            <p class="subtitle">Wybierz idealną ofertę,<br> zabierz ekipę na przygodę <br>i zapłać mniej!
+            </p>
+
+            <table class="discounts__table">
+               <tr>
+                  <th>Rodzaj grupy</th>
+                  <th>Minimalna liczba osób</th>
+                  <th>Zniżka </th>
+               </tr>
+               <tr>
+                  <td>Uczniowie</td>
+                  <td>10</td>
+                  <td>35%</td>
+               </tr>
+               <tr>
+                  <td>Studenci</td>
+                  <td>10</td>
+                  <td>50%</td>
+               </tr>
+               <tr>
+                  <td>Dorośli</td>
+                  <td>25</td>
+                  <td>20%</td>
+               </tr>
+               <tr>
+                  <td>Seniorzy</td>
+                  <td>15</td>
+                  <td>65%</td>
+               </tr>
+            </table>
+
+            <div class="cooperation">
+               <h3 class="cooperation-text subtitle">Chcesz nawiązać stałą współpracę?</h3>
       
-      <div class="wrapper">
-         <table class="discounts__table">
-            <tr>
-               <th>Rodzaj grupy</th>
-               <th>Minimalna liczba osób</th>
-               <th>Zniżka </th>
-            </tr>
-            <tr>
-               <td>Uczniowie</td>
-               <td>10</td>
-               <td>35%</td>
-            </tr>
-            <tr>
-               <td>Studenci</td>
-               <td>10</td>
-               <td>50%</td>
-            </tr>
-            <tr>
-               <td>Dorośli</td>
-               <td>25</td>
-               <td>20%</td>
-            </tr>
-            <tr>
-               <td>Seniorzy</td>
-               <td>15</td>
-               <td>65%</td>
-            </tr>
-         </table>
-         <div class="discounts__cooperation">
-            <h3 class="discounts__cooperation-text subtitle" >Chcesz nawiązać stałą współpracę?</h3>
-            <div class="discounts__cooperation-link">
-               <a href="contact.html">Skontaktuj się z nami!</a>
+               <button class="contact-btn"><a href="contact.html">Skontaktuj się z nami!</a></button>
             </div>
+
          </div>
-      </div>
-   </section>
-</main>
+      </section>
+   </main>
 
-<!-- @include 'footer.kit' -->
+   <!-- @include 'footer.kit' -->
 
-<script src="/dist/js/script.min.js"></script>
+   <script src="/dist/js/script.min.js"></script>
 </body>
+
 </html>

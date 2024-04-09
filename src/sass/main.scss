@@ -34,8 +34,8 @@ body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-      position: fixed;
-      width: 100%;
+		position: fixed;
+		width: 100%;
 		top: 0;
 		min-height: 4em;
 		background-color: c.$main-color;
@@ -65,9 +65,9 @@ body {
 						color: #fff;
 					}
 				}
-            a{
-               padding: 1.2em 0;
-            }
+				a {
+					padding: 1.2em 0;
+				}
 			}
 		}
 	}
@@ -77,55 +77,55 @@ body {
 	display: none;
 	position: fixed;
 	right: 10px;
-   border: none;
-   background: none;
+	border: none;
+	background: none;
 	padding: 1em;
 	cursor: pointer;
 	z-index: 1000;
 
-   
 	.bars {
-      position: relative;
+		position: relative;
 		width: 35px;
 		height: 30px;
-      
+
 		.bar,
 		.bar::after,
 		.bar::before {
-         position: absolute;
+			position: absolute;
 			right: 0;
 			height: 2.5px;
 			background-color: c.$strong-dark;
 			content: "";
 			transition: 0.3s;
 		}
-      
+
 		.bar {
-         width: 100%;
-         
+			width: 100%;
+
 			&::after {
-            width: 60%;
+				width: 60%;
 				top: 13px;
 			}
-         
+
 			&::before {
-            width: 30%;
+				width: 30%;
 				top: 25px;
 				transition-delay: 0.1s;
 			}
 		}
 	}
-   
-   &:focus {
-      outline: none;
-   }
-   
-   &:hover, &:focus {
-      .bar::before,
-      .bar::after {
-         width: 100%;
-      }
-   }
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover,
+	&:focus {
+		.bar::before,
+		.bar::after {
+			width: 100%;
+		}
+	}
 }
 
 .a-style {
@@ -133,12 +133,11 @@ body {
 	color: c.$strong-dark;
 }
 
-
 //HOME
 //-----------------------------------------------------------------------
 
 .home {
-	@include mixins.heroImages("/dist/img/home_desk.jpg");
+	@include mixins.heroImages("/dist/img/home_small.jpg");
 	background-position: 50% 75%;
 	background-attachment: scroll;
 	padding: 12em 2em 10em;
@@ -203,12 +202,11 @@ body {
 //--------------------------------------------------------------------
 
 .offer {
-
 	&__box {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-      margin-bottom: 2em;
+		margin-bottom: 2em;
 	}
 
 	&__option {
@@ -256,21 +254,21 @@ body {
 	}
 
 	&__link {
-      padding-bottom: .5em;
+		padding-bottom: 0.5em;
 		display: flex;
 		flex-direction: column;
-      align-items: center;
-      overflow: hidden;
+		align-items: center;
+		overflow: hidden;
 
 		img {
 			border-radius: 6px;
 			margin: 2em 0;
-         height: 14em;
+			height: 14em;
 		}
 		a {
-         button {
-            @include mixins.btnStyle;
-            font-size: 2rem;
+			button {
+				@include mixins.btnStyle;
+				font-size: 2rem;
 			}
 		}
 	}
