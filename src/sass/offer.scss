@@ -2,3 +2,46 @@
 @use "components";
 @use "mixins";
 
+.discounts {
+	
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		margin-top: 1.5em;
+
+		&__table {
+			margin: 2.5em 0;
+			text-align: center;
+			border-collapse: collapse;
+
+			th {
+				background-color: c.$green;
+			}
+
+			td,
+			th {
+				padding: 0.4em 0.5em;
+				border: 1px solid;
+			}
+
+			tr:nth-of-type(odd) {
+				background-color: #fff;
+			}
+
+			td:first-of-type {
+				text-align: left;
+			}
+		}
+
+		.contact-btn {
+			@include mixins.btnStyle;
+			margin-top: 1.5em;
+
+			a {
+				text-decoration: none;
+				color: c.$dark-text;
+				font-size: 2rem;
+			}
+		}
+	}
