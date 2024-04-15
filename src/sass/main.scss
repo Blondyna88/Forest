@@ -43,13 +43,14 @@ body {
 
 		.logo {
          min-width: 5em;
-			font-size: 3rem;
+			font-size: 2rem;
          a{
             display: flex;
             flex-wrap: nowrap;
 
             i {
                color: c.$logo;
+               padding-right: .2em;
             }
          }
 		}
@@ -168,7 +169,7 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-
+      overflow: hidden;
 		&-img {
 			img {
 				border-radius: 6px;
@@ -217,7 +218,7 @@ body {
 	&__option {
 		margin: 2.5em 0;
 		padding: 2em;
-		min-width: 271px;
+		min-width: 279px;
 		text-align: center;
 		background-color: c.$main-color;
 		box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
@@ -295,6 +296,7 @@ body {
 			i {
 				color: c.$logo;
 				margin: 0 0 1em 0.5em;
+            padding-right: .2em;
 			}
 		}
 
@@ -387,8 +389,3 @@ body {
 	}
 }
 
-@media(max-width: 965px){
-   body{
-      background-color: green;
-   }
-}
