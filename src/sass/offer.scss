@@ -119,12 +119,10 @@
 		}
 		.offer {
 			&__box {
-				display: flex;
 				flex-direction: row;
-				flex-wrap: wrap;
 				justify-content: space-around;
-				align-items: center;
-				margin-bottom: 2em;
+				flex-wrap: wrap;
+            width: 100%;
 			}
          &__option {
             margin: 2.5em 0.5em;

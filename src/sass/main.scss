@@ -62,7 +62,7 @@ body {
 			&-item {
 				list-style: none;
 				font-size: 1.6rem;
-				padding: 1.4em 1em;
+				padding: 1.6em 1em;
 				transition: 0.4s;
 
 				&:hover {
@@ -299,6 +299,7 @@ body {
 		&-text {
 			display: flex;
 			justify-content: space-around;
+         flex-wrap: wrap;
          width: 100%;
 		}
 	}
@@ -411,6 +412,7 @@ body {
 
          &-logo{
             width: 30%;
+            transform: translateY(25%);
          }
          &-text{
             width: 65%;
@@ -418,6 +420,20 @@ body {
       }
    }
 
+}
+
+@media(min-width:992px){
+   .aboutus{
+      &__text{
+         font-size: 2rem;
+      }
+   }
+
+   .hero__img{
+      &-text{
+         font-size: 3rem;
+      }
+   }
 }
 
 @media (max-width: 768px) {
