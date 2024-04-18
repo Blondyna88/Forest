@@ -3,64 +3,132 @@
 @use "mixins";
 
 .discounts {
-	
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		margin-top: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 1.5em;
 
-		&__table {
-			margin: 2.5em 0;
-			text-align: center;
-			border-collapse: collapse;
+	&__table {
+		margin: 2.5em 0;
+		text-align: center;
+		border-collapse: collapse;
 
-			th {
-				background-color: c.$green;
-			}
-
-			td,
-			th {
-				padding: 0.4em 0.5em;
-				border: 1px solid;
-			}
-
-			tr:nth-of-type(odd) {
-				background-color: #fff;
-			}
-
-			td:first-of-type {
-				text-align: left;
-			}
+		th {
+			background-color: c.$green;
 		}
 
-		.contact-btn {
-			@include mixins.btnStyle;
-			margin: 1.5em 0;
+		td,
+		th {
+			padding: 0.4em 0.5em;
+			border: 1px solid;
+		}
 
-			a {
-				text-decoration: none;
-				color: c.$dark-text;
-				font-size: 2rem;
+		tr:nth-of-type(odd) {
+			background-color: #fff;
+		}
+
+		td:first-of-type {
+			text-align: left;
+		}
+	}
+
+	&__info {
+		text-align: center;
+		font-size: 2rem;
+	}
+
+	.offer {
+		&__box {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-bottom: 2em;
+		}
+		&__option {
+			margin: 2.5em 0;
+			padding: 2em;
+			min-width: 279px;
+			text-align: center;
+			background-color: c.$main-color;
+			box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+			border-radius: 6px;
+			transition: 0.3s;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			&-heading {
+				font-size: 2.8rem;
+			}
+			&-price {
+				margin: 0.5em 0;
+				font-size: 3rem;
+			}
+			&-list {
+				list-style: none;
+
+				li {
+					font-size: 1.8rem;
+					font-weight: 450;
+					padding: 0.3em;
+
+					.fa-check {
+						color: c.$green;
+					}
+				}
+				.minus {
+					color: c.$gray-text;
+				}
+			}
+
+			&-btn {
+				margin-top: 1.5em;
+				@include mixins.btnStyle;
 			}
 		}
 	}
 
+	.contact-btn {
+		@include mixins.btnStyle;
+		margin: 1.5em 0;
 
+		a {
+			text-decoration: none;
+			color: c.$gray-text;
+			font-size: 2rem;
+		}
+	}
+}
 
-@media(min-width: 576px){
-   .contact-btn{
-      margin: 3em 0 2em ;
-      padding: .7em 3em !important;
-   }
+@media (min-width: 576px) {
+	.contact-btn {
+		margin: 3em 0 2em;
+		padding: 0.7em 3em !important;
+	}
 
-   .discounts{
-      &__table{
-         margin: 3em 0 5em;
+	.discounts {
+		&__table {
+			margin: 3em 0 5em;
 
-         th, td{
-            padding: 0.8em 1em;
+			th,
+			td {
+				padding: 0.8em 1em;
+			}
+		}
+		.offer {
+			&__box {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: center;
+				margin-bottom: 2em;
+			}
+         &__option {
+            margin: 2.5em 0.5em;
          }
-      }
-   }
+		}
+	}
 }

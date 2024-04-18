@@ -46,8 +46,7 @@ body {
 			font-size: 2rem;
 
 			a {
-				display: flex;
-				flex-wrap: nowrap;
+				text-wrap: nowrap;
 
 				i {
 					color: c.$logo;
@@ -169,28 +168,26 @@ body {
 	&__box {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		overflow: hidden;
-		&-img {
-			img {
-				border-radius: 6px;
-			}
-		}
+	}
+   
+	&__img {
+      width: 100%;
+      margin-bottom: 2em;
+	}
 
-		&-text {
-			padding: 2em 0;
-			h3 {
-				font-size: 2.4rem;
-				font-weight: 700;
-				margin-bottom: 0.5em;
-			}
-			p {
-				font-weight: 400;
-				line-height: 1.4em;
-			}
-		}
+	&__title {
+		font-size: 2.4rem;
+		font-weight: 700;
+		margin-bottom: 0.5em;
+	}
+
+	&__text {
+		font-weight: 400;
+		line-height: 1.4em;
 	}
 }
+
+//HERO 
 
 .hero__img {
 	@include mixins.heroImages("/dist/img/girl_small.jpg");
@@ -214,7 +211,6 @@ body {
 		align-items: center;
 		margin-bottom: 2em;
 	}
-
 	&__option {
 		margin: 2.5em 0;
 		padding: 2em;
@@ -260,16 +256,16 @@ body {
 	}
 
 	&__link {
-		padding-bottom: 0.5em;
-		display: flex;
+      display: flex;
 		flex-direction: column;
-		align-items: center;
-		overflow: hidden;
+		padding-bottom: 0.5em;
+      justify-content: center;
+      align-items: center;
 
 		img {
-			border-radius: 6px;
+         width: 70%;
+         max-width: 450px;
 			margin: 2em 0;
-			height: 14em;
 		}
 		a {
 			button {
@@ -289,7 +285,7 @@ body {
 	&__box {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-around;
+      justify-content: space-between;
 		padding: 2em 1em;
 
 		&-logo {
@@ -303,6 +299,7 @@ body {
 		&-text {
 			display: flex;
 			justify-content: space-around;
+         width: 100%;
 		}
 	}
 
@@ -355,6 +352,11 @@ body {
 }
 
 @media (min-width: 576px) {
+
+   .hero__img{
+      @include mixins.heroImages("/dist/img/girl_desk.jpg");
+   }
+
 	.offer {
 		&__box {
 			display: flex;
@@ -364,15 +366,58 @@ body {
 			align-items: center;
 			margin-bottom: 2em;
 		}
+		&__option {
+			margin: 2.5em 0.5em;
+		}
 	}
+}
+
+@media (min-width: 768px) {
+   .home{
+      @include mixins.heroImages("/dist/img/home_desk.jpg");
+      background-position: 50% 75%;
+      background-attachment: scroll;
+      padding: 12em 2em 10em;
+   }
+   .aboutus {
+      &__box {
+         flex-direction: row;
+			justify-content: space-between;
+         align-items: center;
+         
+			&-img {
+            width: 48%;
+			}
+			&-text {
+            width: 48%;
+			}
+		}
+      &__img{
+         margin-bottom: 0;
+      }
+	}
+
+   .offer {
+      &__option {
+         margin: 2.5em 1em;
+      }
+   }
 
    .footer{
       &__box{
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+
          &-logo{
-            margin-left: 6em;
+            width: 30%;
+         }
+         &-text{
+            width: 65%;
          }
       }
    }
+
 }
 
 @media (max-width: 768px) {
