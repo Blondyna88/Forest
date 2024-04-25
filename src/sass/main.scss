@@ -169,10 +169,10 @@ body {
 		display: flex;
 		flex-direction: column;
 	}
-   
+
 	&__img {
-      width: 100%;
-      margin-bottom: 2em;
+		width: 100%;
+		margin-bottom: 2em;
 	}
 
 	&__title {
@@ -187,7 +187,7 @@ body {
 	}
 }
 
-//HERO 
+//HERO
 
 .hero__img {
 	@include mixins.heroImages("../img/girl_small.jpg");
@@ -256,15 +256,15 @@ body {
 	}
 
 	&__link {
-      display: flex;
+		display: flex;
 		flex-direction: column;
 		padding-bottom: 0.5em;
-      justify-content: center;
-      align-items: center;
+		justify-content: center;
+		align-items: center;
 
 		img {
-         width: 70%;
-         max-width: 450px;
+			width: 70%;
+			max-width: 450px;
 			margin: 2em 0;
 		}
 		a {
@@ -285,7 +285,7 @@ body {
 	&__box {
 		display: flex;
 		flex-direction: column;
-      justify-content: space-between;
+		justify-content: space-between;
 		padding: 2em 1em;
 
 		&-logo {
@@ -299,8 +299,8 @@ body {
 		&-text {
 			display: flex;
 			justify-content: space-around;
-         flex-wrap: wrap;
-         width: 100%;
+			flex-wrap: wrap;
+			width: 100%;
 		}
 	}
 
@@ -353,10 +353,9 @@ body {
 }
 
 @media (min-width: 576px) {
-
-   .hero__img{
-      @include mixins.heroImages("../img/girl_desk.jpg");
-   }
+	.hero__img {
+		@include mixins.heroImages("../img/girl_desk.jpg");
+	}
 
 	.offer {
 		&__box {
@@ -374,67 +373,66 @@ body {
 }
 
 @media (min-width: 768px) {
-   .home{
-      @include mixins.heroImages("../img/home_desk.jpg");
-      background-position: 50% 75%;
-      background-attachment: scroll;
-      padding: 12em 2em 10em;
-   }
-   .aboutus {
-      margin-bottom: 2em;
-      &__box {
-         flex-direction: row;
+	.home {
+		@include mixins.heroImages("../img/home_desk.jpg");
+		background-position: 50% 75%;
+		background-attachment: scroll;
+		padding: 12em 2em 10em;
+	}
+	.aboutus {
+		margin-bottom: 2em;
+		&__box {
+			flex-direction: row;
 			justify-content: space-between;
-         align-items: center;
-         
+			align-items: center;
+
 			&-img {
-            width: 48%;
+				width: 48%;
 			}
 			&-text {
-            width: 48%;
+				width: 48%;
 			}
 		}
-      &__img{
-         margin-bottom: 0;
-      }
+		&__img {
+			margin-bottom: 0;
+		}
 	}
 
-   .offer {
-      &__option {
-         margin: 2.5em 1em;
-      }
-   }
+	.offer {
+		&__option {
+			margin: 2.5em 1em;
+		}
+	}
 
-   .footer{
-      &__box{
-         flex-direction: row;
-         justify-content: center;
-         align-items: center;
+	.footer {
+		&__box {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
 
-         &-logo{
-            width: 30%;
-            transform: translateY(25%);
-         }
-         &-text{
-            width: 65%;
-         }
-      }
-   }
-
+			&-logo {
+				width: 30%;
+				transform: translateY(25%);
+			}
+			&-text {
+				width: 65%;
+			}
+		}
+	}
 }
 
-@media(min-width:992px){
-   .aboutus{
-      &__text{
-         font-size: 2rem;
-      }
-   }
+@media (min-width: 992px) {
+	.aboutus {
+		&__text {
+			font-size: 2rem;
+		}
+	}
 
-   .hero__img{
-      &-text{
-         font-size: 3rem;
-      }
-   }
+	.hero__img {
+		&-text {
+			font-size: 3rem;
+		}
+	}
 }
 
 @media (max-width: 768px) {
@@ -442,31 +440,36 @@ body {
 		display: block;
 	}
 
-	.nav__list {
-		position: fixed;
-		flex-direction: column;
-		width: 100%;
-		top: 4em;
-		background-color: c.$main-color;
-		transform: translateX(100%);
-		text-align: center;
-		transition: 0.4s;
-		padding: 1em 0;
+	.header {
+		.nav__list {
+			position: fixed;
+			flex-direction: column;
+			width: 100%;
+			top: 4em;
+			background-color: c.$main-color;
+			transform: translateX(100%);
+			text-align: center;
+			transition: 0.4s;
+			padding: 1em 0;
 
-		&-item {
-			top: 0;
-			a {
-				padding: 1em 5em;
+			&-item {
+				display: flex;
+				justify-content: center;
+				padding: 0.5em 0;
+				.a-style {
+					padding: 1em 5em;
+					width: 100%;
+				}
 			}
 		}
-	}
 
-	.open {
-		transform: translateX(0);
-		left: 0;
-	}
+		.open {
+			transform: translateX(0);
+			left: 0;
+		}
 
-	.nav-items-animation {
-		animation: navItemsAnimation 0.5s both;
+		.nav-items-animation {
+			animation: navItemsAnimation 0.5s both;
+		}
 	}
 }
