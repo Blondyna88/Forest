@@ -143,7 +143,7 @@ body {
 //-----------------------------------------------------------------------
 
 .home {
-	@include mixins.heroImages("/dist/img/home_small.jpg");
+	@include mixins.heroImages("dist/img/home_small.jpg");
 	background-position: 50% 75%;
 	background-attachment: scroll;
 	padding: 12em 2em 10em;
@@ -190,7 +190,7 @@ body {
 //HERO 
 
 .hero__img {
-	@include mixins.heroImages("/dist/img/girl_small.jpg");
+	@include mixins.heroImages("dist/img/girl_small.jpg");
 	padding: 6em 0;
 
 	&-text {
@@ -355,7 +355,7 @@ body {
 @media (min-width: 576px) {
 
    .hero__img{
-      @include mixins.heroImages("/dist/img/girl_desk.jpg");
+      @include mixins.heroImages("dist/img/girl_desk.jpg");
    }
 
 	.offer {
@@ -375,7 +375,7 @@ body {
 
 @media (min-width: 768px) {
    .home{
-      @include mixins.heroImages("/dist/img/home_desk.jpg");
+      @include mixins.heroImages("dist/img/home_desk.jpg");
       background-position: 50% 75%;
       background-attachment: scroll;
       padding: 12em 2em 10em;
